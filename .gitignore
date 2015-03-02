@@ -1,4 +1,4 @@
-run-spring-ref.sh
 *.swp
 *.log
 spring-ref-1.0.0.war
+prod.env

@@ -3,12 +3,23 @@ gradle2:
     volumes:
         - ../../Projects:/mnt/gradle-projects
     command: /sbin/my_init
+postgres:
+    image: postgres:9.4.1
+    ports:
+        - "127.0.0.1:5432:5432"
+    volumes:
+        - /springref-data
+    env_file:
+        - postgres-prod.env
+    hostname: postgres
 springref:
     build: .
     ports:
         - "127.0.0.1:8080:8080"
         - "127.0.0.1:8443:8443"
+    links:
+        - postgres
     volumes_from:
         - gradle2
     env_file:
-        - prod.env
+        - springref-prod.env

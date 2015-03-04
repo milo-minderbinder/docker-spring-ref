@@ -1,14 +1,14 @@
 gradle2:
     image: mminderbinder/gradle2:oracle-java7
     volumes:
-        - ../../Projects:/mnt/gradle-projects
+        - ~/Projects/spring-ref/:/mnt/gradle-projects/spring-ref
     command: /sbin/my_init
 postgres:
     image: postgres:9.4.1
-    ports:
-        - "127.0.0.1:5432:5432"
+    expose:
+        - "5432"
     volumes:
-        - /springref-data
+        - /mnt/springref-data
     env_file:
         - postgres-prod.env
     hostname: postgres

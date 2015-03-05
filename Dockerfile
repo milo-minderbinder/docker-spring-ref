@@ -15,6 +15,10 @@ RUN chmod +x /usr/share/tomcat7/bin/*.sh
 # Copy application war into webapps directory
 COPY spring-ref-1.0.0.war /var/lib/tomcat7/webapps/spring-ref.war
 
+# Copy get-latest.sh into init scripts dir
+COPY get-latest.sh /etc/my_init.d/get-latest.sh
+RUN chmod +x /etc/my_init.d/get-latest.sh
+
 # Expose http port (redirects to https port 8443)
 EXPOSE 8080
 # Expose SSL port

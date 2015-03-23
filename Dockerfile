@@ -1,4 +1,4 @@
-FROM mminderbinder/tomcat7:oracle-java7
+FROM mminderbinder/tomcat7:oracle-java8
 MAINTAINER Milo Minderbinder <minderbinder.enterprises@gmail.com>
 
 

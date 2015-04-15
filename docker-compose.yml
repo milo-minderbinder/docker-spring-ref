@@ -1,8 +1,13 @@
 gradle2:
-    image: mminderbinder/gradle2:oracle-java7
+    image: mminderbinder/gradle2:oracle-java8
     volumes:
         - ~/Projects/spring-ref/:/mnt/gradle-projects/spring-ref
     command: /sbin/my_init
+redis:
+    image: redis:2.8.19
+    expose:
+        - "6379"
+    hostname: redis 
 postgres:
     image: postgres:9.4.1
     expose:
@@ -19,6 +24,7 @@ springref:
         - "127.0.0.1:8443:8443"
     links:
         - postgres
+        - redis
     volumes_from:
         - gradle2
     env_file:

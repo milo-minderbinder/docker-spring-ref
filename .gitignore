@@ -1,4 +1,4 @@
-*.swp
+*.sw[po]
 *.log
 spring-ref-1.0.0.war
 *.env

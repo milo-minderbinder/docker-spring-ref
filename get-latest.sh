@@ -2,7 +2,7 @@
 
 projects_dir=/mnt/gradle-projects
 echo "projects_dir: $projects_dir"
-new_app_war=$projects_dir/spring-ref/build/libs/spring-ref-1.0.0.war
+new_app_war=`find "$projects_dir/spring-ref/build/libs/" -iname 'spring-ref-*.war' -type f`
 echo "new_app_war: $new_app_war"
 app_war=/var/lib/tomcat7/webapps/spring-ref.war
 echo "app_war: $app_war"
